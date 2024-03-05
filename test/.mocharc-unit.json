@@ -1,0 +1,10 @@
+{
+	"diff": true,
+	"package": "../package.json",
+	"spec": "test/unit/*.ts",
+	"require": [
+		"ts-node/register",
+		"tsconfig-paths/register"
+	],
+	"ui": "bdd"
+}
