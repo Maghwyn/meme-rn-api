@@ -25,8 +25,8 @@ const ERRORS = {
 	},
 	UNPROCESSABLE_ENTITY: {
 		status: HttpStatus.UNPROCESSABLE_ENTITY,
-		message: 'Unprocessable entity'
-	}
+		message: 'Unprocessable entity',
+	},
 };
 
 export class ServiceError extends HttpException {
@@ -44,8 +44,8 @@ export class ServiceErrorCatcher implements ExceptionFilter {
 		const status = exception.getStatus();
 		const { message, error } = exception.getResponse() as ErrorResponse;
 
-		if (config.app.env !== "test") {
-			NestLogger.error(error, exception.stack, message.toUpperCase()); 
+		if (config.app.env !== 'test') {
+			NestLogger.error(error, exception.stack, message.toUpperCase());
 		}
 
 		response.status(status).json({

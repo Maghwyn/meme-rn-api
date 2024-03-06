@@ -8,12 +8,7 @@ import { MailjetModule } from '@/mailjet/mailjet.module';
 import { UsersModule } from '@/users/users.module';
 
 @Module({
-	imports: [
-		EventEmitterModule.forRoot(),
-		DatabaseModule.forRoot(),
-		MailjetModule,
-		UsersModule,
-	],
+	imports: [EventEmitterModule.forRoot(), DatabaseModule.forRoot(), MailjetModule, UsersModule],
 	controllers: [AppController],
 	providers: [AppService],
 })

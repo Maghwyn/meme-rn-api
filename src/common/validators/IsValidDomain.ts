@@ -1,11 +1,19 @@
-import { ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments, ValidationOptions, registerDecorator } from 'class-validator';
+import {
+	ValidatorConstraint,
+	ValidatorConstraintInterface,
+	ValidationArguments,
+	ValidationOptions,
+	registerDecorator,
+} from 'class-validator';
 import { getDomainUrl } from '@/common/helpers/string.helper';
 
 @ValidatorConstraint()
 class IsValidDomainConstraint implements ValidatorConstraintInterface {
 	validate(url: string, _: ValidationArguments) {
 		const allowedDomain = getDomainUrl();
-		const allowedDomainRegex = new RegExp('^' + allowedDomain.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'));
+		const allowedDomainRegex = new RegExp(
+			'^' + allowedDomain.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'),
+		);
 		return allowedDomainRegex.test(url);
 	}
 
@@ -21,7 +29,7 @@ export function IsValidDomain(validationOptions?: ValidationOptions) {
 			target: object.constructor,
 			propertyName,
 			options: validationOptions,
-			validator: IsValidDomainConstraint
+			validator: IsValidDomainConstraint,
 		});
-	}
+	};
 }

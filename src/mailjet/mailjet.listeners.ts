@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 
-import { config } from '@/config/config';
 import { MailjetService } from '@/mailjet/mailjet.service';
 import { MailjetEmail, MailjetAskToken } from '@/mailjet/events/mj.events.req';
 import { Events, MailjetTemplate } from '@/mailjet/types/events.enum';
