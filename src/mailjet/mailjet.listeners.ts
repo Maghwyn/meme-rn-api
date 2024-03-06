@@ -32,15 +32,4 @@ export class MailjetListeners {
 			args: { code: token },
 		});
 	}
-
-	@OnEvent(Events.askResetPwdToken)
-	async handleAskResetToken(payload: MailjetAskToken) {
-		const { email, token } = payload;
-
-		this.mailjetService.sendUniversalEmail({
-			templateId: MailjetTemplate.resetPwdToken,
-			recipients: [{ Email: email }],
-			args: { token },
-		});
-	}
 }
