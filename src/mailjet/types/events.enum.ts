@@ -1,9 +1,11 @@
+import { config } from '@/config/config';
+
 export enum Events {
 	accountValidated = 'mailjet.account.validated',
 	askActivationToken = 'mailjet.token.askActivation',
 }
 
 export enum MailjetTemplate {
-	accountValidated = 1212121, // TODO
-	activationToken = 1212122, // TODO
+	accountValidated = config.mailjet.templates.account_validated, // TODO
+	activationToken = config.mailjet.templates.activation_token, // TODO
 }

@@ -26,5 +26,11 @@ export namespace Configuration {
 	export interface Mailjet {
 		user: string;
 		pass: string;
+		templates: MailjetTemplate;
+	}
+
+	export interface MailjetTemplate {
+		account_validated: number;
+		activation_token: number;
 	}
 }
