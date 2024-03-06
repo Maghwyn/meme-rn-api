@@ -15,8 +15,4 @@ export class MailjetEventEmitter {
 	async askActivationToken(email: string, token: string) {
 		this.eventEmitter.emit(Events.askActivationToken, new MailjetAskToken(email, token));
 	}
-
-	async askResetPwdToken(email: string, token: string) {
-		this.eventEmitter.emit(Events.askResetPwdToken, new MailjetAskToken(email, token));
-	}
 }

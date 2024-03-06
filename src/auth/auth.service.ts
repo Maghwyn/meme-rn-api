@@ -84,19 +84,6 @@ export class AuthService {
 		}
 	}
 
-	public async askResetPwdToken(email: string) {
-		try {
-			const resetPwdToken = await this._createToken(
-				email,
-				TokenEnum.RESET_PWD,
-				generateRandomToken,
-			);
-			this.mailjetEventEmitter.askResetPwdToken(email, resetPwdToken);
-		} catch (err) {
-			return; // Prevent the digging of registered emails by always returning 201
-		}
-	}
-
 	private async _createToken(email: string, type: TokenEnum, tokenGenerator: () => string) {
 		const user = await this.usersService.getUserFrom({ email });
 		if (!user || (user?.activated && type === TokenEnum.ACTIVATION))
