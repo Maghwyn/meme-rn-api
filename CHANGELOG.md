@@ -1,3 +1,15 @@
+# [1.1.0-dev.2](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2024-03-06)
+
+
+### Bug Fixes
+
+* **mailjet:** Remove reset password token ([dbfec1e](https://github.com/Maghwyn/meme-rn-api/commit/dbfec1e416e6c238fde3d609890ced9638f1bbae))
+
+
+### Features
+
+* **env:** Resolve the mailjet template id and move them to the env ([51a6428](https://github.com/Maghwyn/meme-rn-api/commit/51a6428bc4f565e4c35a89c7115e8337c0ce9f8c))
+
 # [1.1.0-dev.1](https://github.com/Maghwyn/meme-rn-api/compare/v1.0.0...v1.1.0-dev.1) (2024-03-06)
 
 
