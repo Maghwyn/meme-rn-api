@@ -6,6 +6,6 @@ export enum Events {
 
 export enum MailjetTemplate {
 	accountValidated = 1212121, // TODO
-	activationToken = 1212121, // TODO
-	resetPwdToken = 1212121,  // TODO
+	activationToken = 1212122, // TODO
+	resetPwdToken = 1212123, // TODO
 }

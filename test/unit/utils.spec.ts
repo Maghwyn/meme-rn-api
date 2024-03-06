@@ -1,13 +1,7 @@
 import { expect } from 'chai';
 import { ObjectId } from 'mongodb';
 
-import {
-	isEmpty,
-	pluralize,
-	convertToObjectId,
-	truncate,
-} from '@/common/helpers/string.helper';
-
+import { isEmpty, pluralize, convertToObjectId, truncate } from '@/common/helpers/string.helper';
 
 describe('Utility Functions (Unit test)', () => {
 	describe('isEmpty', () => {

@@ -66,7 +66,7 @@ export const convertToObjectId = (id: string) => {
 export const getDomainUrl = () => {
 	const protocol = config.app.isHttps ? 'https' : 'http';
 	const domain = config.app.domain;
-	const port = config.app.domain !== "localhost" ? '' : `:${config.app.port}`;
+	const port = config.app.domain !== 'localhost' ? '' : `:${config.app.port}`;
 
 	return `${protocol}://${domain}${port}`;
 };

@@ -43,7 +43,7 @@ export class UsersService {
 	}
 
 	setUserName(customerId: string, firstname: string, lastname: string) {
-		return this.usersRepository.updateOne({ customerId }, { $set: { firstname, lastname }});
+		return this.usersRepository.updateOne({ customerId }, { $set: { firstname, lastname } });
 	}
 
 	aggregateUser(pipeline: Array<Document>, options?: AggregateOptions) {
