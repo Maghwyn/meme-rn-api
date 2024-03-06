@@ -15,7 +15,7 @@
 		"test:cov": "NODE_ENV=test nyc mocha --config=test/.mocharc.json --exit",
 		"test:e2e": "NODE_ENV=test mocha --config=test/.mocharc-e2e.json --exit",
 		"test:unit": "NODE_ENV=test mocha --config=test/.mocharc-unit.json --exit",
-		"postinstall": "husky install && chmod +x .husky/pre-commit"
+		"postinstall": "husky install && chmod +x .husky/pre-commit && chmod +x .husky/commit-msg"
 	},
 	"dependencies": {
 		"@nestjs/common": "^10.3.3",
@@ -44,6 +44,8 @@
 		"stripe": "^14.19.0"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^19.0.3",
+		"@commitlint/config-conventional": "^19.0.3",
 		"@nestjs/cli": "^10.3.2",
 		"@nestjs/schematics": "^10.1.1",
 		"@nestjs/testing": "^10.3.3",
@@ -69,7 +71,7 @@
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.1.3",
-		"husky": "^9.0.11",
+		"husky": "8.0.3",
 		"lint-staged": "^15.2.2",
 		"mocha": "^10.3.0",
 		"mongodb-memory-server": "^9.1.6",
