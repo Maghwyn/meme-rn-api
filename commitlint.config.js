@@ -9,6 +9,11 @@ module.exports = {
 				'pascal-case',
 				'start-case',
 			]
+		],
+		'header-max-length': [
+			2,
+			'always',
+			Infinity
 		]
 	}
 };
