@@ -13,6 +13,4 @@ export const PASSWORD_FORMAT = new RegExp(
 
 export const USERNAME_FORMAT = /^[A-Za-z0-9_\.]+$/;
 export const SEARCH_FORMAT = /^[A-Za-z0-9_.'":\s]+$/;
-export const CATEGORIES = [
-	// TODO
-];
+export const CATEGORIES = ['test'];
