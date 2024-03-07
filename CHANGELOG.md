@@ -1,3 +1,12 @@
+# [1.1.0-dev.9](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.8...v1.1.0-dev.9) (2024-03-07)
+
+
+### Bug Fixes
+
+* **user-data:** Add user _id in route get me ([e0d1560](https://github.com/Maghwyn/meme-rn-api/commit/e0d1560dc3b47fbcd9c00941551d6c0727b37028))
+* **user-data:** Add user _id in route get user ([edc304e](https://github.com/Maghwyn/meme-rn-api/commit/edc304e31499a1006ca5651dab188c9733afe1da))
+* **user:** Default user data for background url & avatar url ([2d1fba2](https://github.com/Maghwyn/meme-rn-api/commit/2d1fba241802ef668172f7dfcd564899fe6902fc))
+
 # [1.1.0-dev.8](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2024-03-07)
 
 
