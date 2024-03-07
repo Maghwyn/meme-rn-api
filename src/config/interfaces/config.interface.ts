@@ -12,6 +12,7 @@ export namespace Configuration {
 		port: string;
 		domain: string;
 		isHttps: boolean;
+		fileSizeLimit: number;
 	}
 
 	export interface MongoDB {

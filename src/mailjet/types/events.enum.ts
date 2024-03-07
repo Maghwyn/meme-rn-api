@@ -6,6 +6,6 @@ export enum Events {
 }
 
 export enum MailjetTemplate {
-	accountValidated = config.mailjet.templates.account_validated, // TODO
-	activationToken = config.mailjet.templates.activation_token, // TODO
+	accountValidated = config.mailjet.templates.account_validated,
+	activationToken = config.mailjet.templates.activation_token,
 }
