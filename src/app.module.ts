@@ -8,6 +8,7 @@ import { AuthModule } from '@/auth/auth.module';
 import { MailjetModule } from '@/mailjet/mailjet.module';
 import { UsersModule } from '@/users/users.module';
 import { MemesModule } from '@/memes/memes.module';
+import { UploadsModule } from '@/uploads/uploads.module';
 
 @Module({
 	imports: [
@@ -17,6 +18,7 @@ import { MemesModule } from '@/memes/memes.module';
 		AuthModule,
 		UsersModule,
 		MemesModule,
+		UploadsModule,
 	],
 	controllers: [AppController],
 	providers: [AppService],
