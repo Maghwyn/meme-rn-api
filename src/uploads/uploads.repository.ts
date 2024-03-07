@@ -2,7 +2,7 @@ import { ReadStream } from 'fs';
 import { Inject, Injectable } from '@nestjs/common';
 import { Db, Filter, GridFSBucket, GridFSBucketReadStream, ObjectId } from 'mongodb';
 
-import { Upload } from '@/memes/types/uploads.type';
+import { Upload } from '@/uploads/types/uploads.type';
 
 @Injectable()
 export class UploadsRepository {
