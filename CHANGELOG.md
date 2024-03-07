@@ -1,3 +1,20 @@
+# [1.1.0-dev.3](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2024-03-07)
+
+
+### Bug Fixes
+
+* **env:** Prefix with NEST_ and add the app file size mb limit ([506d22d](https://github.com/Maghwyn/meme-rn-api/commit/506d22d10af476601a183ab14266725c1c8f8e84))
+* **eslint:** Fix the eslint configuration when it comes to the ignore ([b61bb48](https://github.com/Maghwyn/meme-rn-api/commit/b61bb486cfdd8307a8efa11f240f25d31cb087f9))
+* **module:** Move the uploads outside of the meme module ([166207d](https://github.com/Maghwyn/meme-rn-api/commit/166207ddb9c60c43ab4935694147e64ede3428bc))
+* **semantic-release:** Bump the version and change the commit message + remove todo ([d3be69e](https://github.com/Maghwyn/meme-rn-api/commit/d3be69ea519075ebea30bde338f480913db62ab9))
+
+
+### Features
+
+* **meme-module:** Register and setup the meme module ([6e7c102](https://github.com/Maghwyn/meme-rn-api/commit/6e7c10246ba996b5ef18c3a54014d52ca491819f))
+* **meme-repo:** Setup the memes repository ([31c6135](https://github.com/Maghwyn/meme-rn-api/commit/31c6135604a5a19af0d2c4c767c25569872efdbb))
+* **uploads-repository:** Implement the gridfsbucket upload repo ([a0677fa](https://github.com/Maghwyn/meme-rn-api/commit/a0677faf71afbcebc97418569d683992a67c0cc6))
+
 # [1.1.0-dev.2](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2024-03-06)
 
 
