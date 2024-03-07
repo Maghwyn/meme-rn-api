@@ -32,7 +32,7 @@
 		"class-validator": "^0.14.1",
 		"cookie-parser": "^1.4.6",
 		"dotenv": "^16.4.5",
-		"filenamify": "^6.0.0",
+		"filenamify": "4.3.0",
 		"mongodb": "^6.4.0",
 		"node-mailjet": "^6.0.5",
 		"passport-jwt": "^4.0.1",
