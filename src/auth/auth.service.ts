@@ -38,6 +38,9 @@ export class AuthService {
 			email: payload.email,
 			username: payload.username,
 			password: hashedPassword,
+			bio: `Hello, I'm ${payload.username}, your friendly neighborhood meme connoisseur! 🚀`,
+			pictureUrl: null,
+			backgroundUrl: null,
 			activated: false,
 			createdAt: new Date(),
 		});
