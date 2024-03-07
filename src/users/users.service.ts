@@ -2,7 +2,7 @@ import { AggregateOptions, Filter, FindOneAndUpdateOptions, ObjectId, Document }
 import { Inject, Injectable, forwardRef } from '@nestjs/common';
 
 import { UsersRepository } from '@/users/users.repository';
-import { User } from '@/users/interfaces/users.interface';
+import { User } from '@/users/types/users.type';
 import { KeysRequired } from '@/common/interfaces/advanced.interface';
 
 @Injectable()
