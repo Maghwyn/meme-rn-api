@@ -6,8 +6,7 @@ import { EOL } from 'os';
 
 const envsToCheck = [
 	'NEST_API_PORT',
-	'NEST_API_DOMAIN',
-	'NEST_API_IS_HTTPS',
+	'NEST_API_URL',
 	'NEST_APP_FILE_SIZE_MB_LIMIT',
 	'MONGO_URI',
 	'MONGO_DBNAME',

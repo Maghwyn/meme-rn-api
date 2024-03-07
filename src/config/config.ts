@@ -5,8 +5,7 @@ export const config = {
 	app: {
 		env: process.env.NODE_ENV,
 		port: process.env.NEST_API_PORT,
-		domain: process.env.NEST_API_DOMAIN,
-		isHttps: JSON.parse(process.env.NEST_API_IS_HTTPS),
+		url: process.env.NEST_API_URL,
 		fileSizeLimit: parseInt(process.env.NEST_APP_FILE_SIZE_MB_LIMIT),
 	},
 	mongo: {
