@@ -1,3 +1,10 @@
+# [1.1.0-dev.5](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2024-03-07)
+
+
+### Bug Fixes
+
+* **typos:** Missing property in the projection, renamed variables and fix the type of upload ([8c53189](https://github.com/Maghwyn/meme-rn-api/commit/8c53189879f78ef917b43be987efdd8f4e3b3bdb))
+
 # [1.1.0-dev.4](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2024-03-07)
 
 
