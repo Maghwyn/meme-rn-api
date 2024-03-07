@@ -39,8 +39,9 @@ export class AuthService {
 			username: payload.username,
 			password: hashedPassword,
 			bio: `Hello, I'm ${payload.username}, your friendly neighborhood meme connoisseur! 🚀`,
-			pictureUrl: null,
-			backgroundUrl: null,
+			pictureUrl:
+				'https://static.vecteezy.com/system/resources/previews/012/721/545/original/doge-meme-icon-free-vector.jpg',
+			backgroundUrl: 'https://i.imgflip.com/6gw7k6.jpg',
 			activated: false,
 			createdAt: new Date(),
 		});
