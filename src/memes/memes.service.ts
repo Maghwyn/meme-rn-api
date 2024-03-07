@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
-import { Inject, Injectable, Logger as NestLogger, forwardRef } from '@nestjs/common';
+import { Inject, Injectable, forwardRef } from '@nestjs/common';
 
-import { MemesRepository } from '@/memes/meme.repository';
+import { MemesRepository } from '@/memes/memes.repository';
 import { UsersService } from '@/users/users.service';
 import { ServiceError } from '@/common/error/catch.service';
 import { CATEGORIES, SEARCH_FORMAT } from '@/common/constants/global';
