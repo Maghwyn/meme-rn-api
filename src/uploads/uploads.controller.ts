@@ -27,7 +27,6 @@ import { Jwt } from '@/common/decorators/jwt.decorator';
 import type { MulterFile } from '@/uploads/types/multer.type';
 
 @Controller('uploads')
-@UseGuards(JwtAuthGuard)
 @UseFilters(ServiceErrorCatcher)
 export class UploadsController {
 	private readonly UPLOADS_DIR = resolve(join(cwd(), 'files'));
@@ -39,6 +38,7 @@ export class UploadsController {
 	}
 
 	@Post()
+	@UseGuards(JwtAuthGuard)
 	@UseInterceptors(FileInterceptor('file'))
 	async handleUploadsPicture(
 		@UploadedFile(
@@ -58,8 +58,8 @@ export class UploadsController {
 	}
 
 	@Get('/image/:id')
-	async streamImage(@Jwt() userId: ObjectId, @Param('id') imageId: string, @Res() res: Response) {
-		const imageStream = await this.uploadsService.retrieveUploadFromId(userId, imageId);
+	async streamImage(@Param('id') imageId: string, @Res() res: Response) {
+		const imageStream = await this.uploadsService.retrieveUploadFromId(imageId);
 		res.setHeader('Content-Type', 'image/webp');
 		imageStream.pipe(res);
 	}
