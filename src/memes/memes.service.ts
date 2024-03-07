@@ -9,7 +9,8 @@ import { clearUndefined } from '@/common/helpers/object.helper';
 import { MEMES_PROJECTION } from '@/memes/utils/memes.projection';
 import { DTOCreateMeme } from '@/memes/dto/memes.dto';
 import { convertToObjectId } from '@/common/helpers/string.helper';
-import type { MemeSearchQuery, MemeUpload } from '@/memes/types/memes.type';
+import { getMemesCommentsPipeline, getMemesLikesPipeline } from '@/memes/utils/memes.pipeline';
+import type { MemeSearchQuery, MemeUpload, Comment } from '@/memes/types/memes.type';
 
 @Injectable()
 export class MemesService {
@@ -64,6 +65,7 @@ export class MemesService {
 			upload: meme.upload || ({} as MemeUpload),
 			category: meme.category,
 			comments: [],
+			likes: [],
 			updatedAt: now,
 			createdAt: now,
 		});
@@ -71,8 +73,8 @@ export class MemesService {
 		return await this.memesRepository.findOne({ _id: rs.insertedId }, MEMES_PROJECTION);
 	}
 
-	async sendComment(userId: ObjectId, memetrId: string, content: string) {
-		const memeId = convertToObjectId(memetrId);
+	async addComment(userId: ObjectId, memeStrId: string, content: string) {
+		const memeId = convertToObjectId(memeStrId);
 
 		const user = await this.userService.getUserFrom({ _id: userId });
 		if (!user)
@@ -81,19 +83,16 @@ export class MemesService {
 				'You do not have the rights to access this ressource',
 			);
 
-		const meme = await this.memesRepository.exists({ _id: memeId, userId });
-		if (!meme)
-			throw new ServiceError(
-				'UNAUTHORIZED',
-				'You do not have the rights to access this ressource',
-			);
+		const meme = await this.memesRepository.exists({ _id: memeId });
+		if (!meme) throw new ServiceError('NOT_FOUND', 'The requests meme does not exist');
 
 		const now = new Date();
 		const comment = {
+			userId: userId,
 			username: user.username,
 			content: content,
 			createdAt: now,
-		};
+		} satisfies Comment;
 
 		await this.memesRepository.updateOne(
 			{ _id: memeId },
@@ -108,5 +107,58 @@ export class MemesService {
 		);
 
 		return comment;
+	}
+
+	async toggleLike(userId: ObjectId, memeStrId: string) {
+		const memeId = convertToObjectId(memeStrId);
+
+		const user = await this.userService.getUserFrom({ _id: userId });
+		if (!user)
+			throw new ServiceError(
+				'UNAUTHORIZED',
+				'You do not have the rights to access this ressource',
+			);
+
+		const meme = await this.memesRepository.findOne({ _id: memeId });
+		if (!meme) throw new ServiceError('NOT_FOUND', 'The requests meme does not exist');
+
+		const isLiked = meme.likes.includes(userId);
+
+		if (!isLiked) {
+			await this.memesRepository.updateOne(
+				{ _id: memeId },
+				{
+					push: {
+						likes: userId,
+					},
+				},
+			);
+		} else {
+			await this.memesRepository.updateOne(
+				{ _id: memeId },
+				{
+					$pull: {
+						likes: userId,
+					},
+				},
+			);
+		}
+	}
+
+	async retrieveUserMemesComments(userStrId: string) {
+		const userId = convertToObjectId(userStrId);
+		const pipeline = getMemesCommentsPipeline(userId);
+		return this.memesRepository.aggregate(pipeline);
+	}
+
+	async retrieveUserMemesLike(userStrId: string) {
+		const userId = convertToObjectId(userStrId);
+		const pipeline = getMemesLikesPipeline(userId);
+		return this.memesRepository.aggregate(pipeline);
+	}
+
+	async retrieveUserMemesCreated(userStrId: string) {
+		const userId = convertToObjectId(userStrId);
+		return this.memesRepository.findMany({ userId: userId }, MEMES_PROJECTION);
 	}
 }

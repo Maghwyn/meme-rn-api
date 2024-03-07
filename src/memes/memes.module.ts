@@ -10,5 +10,6 @@ import { UsersModule } from '@/users/users.module';
 	imports: [DatabaseModule.forRoot(), UsersModule],
 	providers: [MemesService, MemesRepository],
 	controllers: [MemesController],
+	exports: [MemesService],
 })
 export class MemesModule {}

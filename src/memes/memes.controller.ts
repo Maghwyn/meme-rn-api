@@ -42,13 +42,41 @@ export class MemesController {
 	}
 
 	@Post('/comment/:memeId')
-	async commentMessage(
+	async commentMeme(
 		@Jwt() userId: ObjectId,
 		@Param('memeId') memeId: string,
 		@Body() body: DTOCommentContent,
 		@Res() res: Response,
 	) {
-		const comment = await this.memesService.sendComment(userId, memeId, body.content);
+		const comment = await this.memesService.addComment(userId, memeId, body.content);
 		return res.status(200).json(comment);
+	}
+
+	@Post('/like/:memeId')
+	async toggleLike(
+		@Jwt() userId: ObjectId,
+		@Param('memeId') memeId: string,
+		@Res() res: Response,
+	) {
+		await this.memesService.toggleLike(userId, memeId);
+		return res.status(200).json();
+	}
+
+	@Get(':userId/comments')
+	async getUserCommentsById(@Param('userId') userId: string, @Res() res: Response) {
+		const comments = await this.memesService.retrieveUserMemesComments(userId);
+		return res.status(200).json(comments);
+	}
+
+	@Get(':userId/likes')
+	async getMeLikes(@Param('userId') userId: string, @Res() res: Response) {
+		const likes = await this.memesService.retrieveUserMemesLike(userId);
+		return res.status(200).json(likes);
+	}
+
+	@Get(':userId/created')
+	async getUserCreatedMemes(@Param('userId') userId: string, @Res() res: Response) {
+		const memes = await this.memesService.retrieveUserMemesCreated(userId);
+		return res.status(200).json(memes);
 	}
 }
