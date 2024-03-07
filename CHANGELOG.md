@@ -1,3 +1,10 @@
+# [1.1.0-dev.6](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2024-03-07)
+
+
+### Bug Fixes
+
+* **jwt:** Local strategy argument payload by remove id & add category test for meme ([bb04ff2](https://github.com/Maghwyn/meme-rn-api/commit/bb04ff20010d697df38b78f99c081425cc0fdb6a))
+
 # [1.1.0-dev.5](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2024-03-07)
 
 
