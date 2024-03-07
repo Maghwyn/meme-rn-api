@@ -10,8 +10,7 @@ export namespace Configuration {
 	export interface Application {
 		env: string;
 		port: string;
-		domain: string;
-		isHttps: boolean;
+		url: string;
 		fileSizeLimit: number;
 	}
 

@@ -44,7 +44,7 @@ export class UploadsService {
 			return {
 				name: fileName,
 				size: `${byteSize(file.size)}`,
-				url: `${getDomainUrl()}/memes/image/${insertedId}`,
+				url: `${getDomainUrl()}/uploads/image/${insertedId}`,
 			};
 		} catch (err) {
 			NestLogger.error(err.message, 'UploadsService:SaveFile');
@@ -67,14 +67,11 @@ export class UploadsService {
 		}
 	}
 
-	async retrieveUploadFromId(userId: ObjectId, imageStrId: string) {
+	async retrieveUploadFromId(imageStrId: string) {
 		const imageId = convertToObjectId(imageStrId);
 
 		const doesExist = await this.uploadsRepository.exists({
 			_id: imageId,
-			metadata: {
-				userId,
-			},
 		});
 
 		if (!doesExist) throw new ServiceError('NOT_FOUND', 'Image file not found');
