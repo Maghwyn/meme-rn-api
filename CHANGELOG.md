@@ -1,3 +1,18 @@
+# [1.1.0-dev.4](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2024-03-07)
+
+
+### Bug Fixes
+
+* **uploads:** Register the uploads module ([e3d780e](https://github.com/Maghwyn/meme-rn-api/commit/e3d780ee84488296216f51b01193a24704a31df7))
+
+
+### Features
+
+* **constants:** Add the categories constant ([8795479](https://github.com/Maghwyn/meme-rn-api/commit/8795479c153691bcb35eb8b59b4e4490cf6ab0e7))
+* **meme-dto:** Define the dto validation ([84b67eb](https://github.com/Maghwyn/meme-rn-api/commit/84b67eb78d554513839f752f9ef52e5ffe942ae9))
+* **memes-module:** Define a basic memes module ([9432962](https://github.com/Maghwyn/meme-rn-api/commit/94329620f7f9a8d23ad9ae18b7e2d78fba933e78))
+* **utils:** Define a meme pipeline ([c50a333](https://github.com/Maghwyn/meme-rn-api/commit/c50a333287669d526aa1cf00c103bbcd88728b2d))
+
 # [1.1.0-dev.3](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2024-03-07)
 
 
