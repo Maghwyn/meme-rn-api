@@ -4,6 +4,7 @@ import {
 	IsIn,
 	IsNotEmpty,
 	IsNumber,
+	IsObject,
 	IsOptional,
 	IsString,
 	Length,
@@ -25,12 +26,10 @@ export class DTOCreateMeme {
 	@IsIn(CATEGORIES, { message: 'category must be one of the allowed values' })
 	public category: string;
 
-	@IsOptional()
 	@IsNotEmpty()
-	@IsArray()
-	@ArrayMaxSize(2)
+	@IsObject()
 	@Type(() => DTOMemeUpload)
-	public uploads: Array<MemeUpload>;
+	public upload: MemeUpload;
 }
 
 class DTOMemeUpload {
