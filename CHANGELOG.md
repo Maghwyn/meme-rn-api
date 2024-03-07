@@ -1,3 +1,10 @@
+# [1.1.0-dev.8](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2024-03-07)
+
+
+### Bug Fixes
+
+* **meme:** Fix the memes comment pipeline ([8f5e5ed](https://github.com/Maghwyn/meme-rn-api/commit/8f5e5ed567d138a2527dd750173ad910618413d2))
+
 # [1.1.0-dev.7](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2024-03-07)
 
 
