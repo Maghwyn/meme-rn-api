@@ -38,10 +38,6 @@ export class UsersService {
 		return this.usersRepository.exists({ _id: userId, activated: true });
 	}
 
-	updateUserPassword(userId: ObjectId, password: string) {
-		return this.usersRepository.updateOne({ _id: userId }, { $set: { password } });
-	}
-
 	setUserName(customerId: string, firstname: string, lastname: string) {
 		return this.usersRepository.updateOne({ customerId }, { $set: { firstname, lastname } });
 	}

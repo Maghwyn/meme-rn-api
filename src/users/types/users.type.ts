@@ -5,6 +5,9 @@ export type User = {
 	email: string;
 	username: string;
 	password: string;
+	pictureUrl: string;
+	backgroundUrl: string;
+	bio: string;
 	activated: boolean;
 	createdAt: Date | string;
 };
