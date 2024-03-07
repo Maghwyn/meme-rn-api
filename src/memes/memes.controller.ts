@@ -37,8 +37,8 @@ export class MemesController {
 
 	@Post()
 	async createMeme(@Jwt() userId: ObjectId, @Body() body: DTOCreateMeme, @Res() res: Response) {
-		const ticket = await this.memesService.createMeme(userId, body);
-		return res.status(201).json(ticket);
+		const meme = await this.memesService.createMeme(userId, body);
+		return res.status(201).json(meme);
 	}
 
 	@Post('/comment/:memeId')
@@ -48,7 +48,7 @@ export class MemesController {
 		@Body() body: DTOCommentContent,
 		@Res() res: Response,
 	) {
-		const message = await this.memesService.sendComment(userId, memeId, body.content);
-		return res.status(200).json(message);
+		const comment = await this.memesService.sendComment(userId, memeId, body.content);
+		return res.status(200).json(comment);
 	}
 }

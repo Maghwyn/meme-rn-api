@@ -6,7 +6,7 @@ export type Meme = {
 	title: string;
 	username: string;
 	category: string;
-	uploads: Array<MemeUpload>;
+	upload: MemeUpload;
 	comments: Array<Comment>;
 	updatedAt: Date;
 	createdAt: Date;

@@ -9,7 +9,7 @@ import { clearUndefined } from '@/common/helpers/object.helper';
 import { MEMES_PROJECTION } from '@/memes/utils/memes.projection';
 import { DTOCreateMeme } from '@/memes/dto/memes.dto';
 import { convertToObjectId } from '@/common/helpers/string.helper';
-import type { MemeSearchQuery } from '@/memes/types/memes.type';
+import type { MemeSearchQuery, MemeUpload } from '@/memes/types/memes.type';
 
 @Injectable()
 export class MemesService {
@@ -61,7 +61,7 @@ export class MemesService {
 			userId: userId,
 			title: meme.title,
 			username: user.username,
-			uploads: meme.uploads || [],
+			upload: meme.upload || ({} as MemeUpload),
 			category: meme.category,
 			comments: [],
 			updatedAt: now,
