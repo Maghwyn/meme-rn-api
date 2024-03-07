@@ -1,3 +1,21 @@
+# [1.1.0-dev.7](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2024-03-07)
+
+
+### Bug Fixes
+
+* **auth:** Fix the authentification, add the bio and the pictureUrl set to null ([d6f52e7](https://github.com/Maghwyn/meme-rn-api/commit/d6f52e7ebb4980eb330839ee454b3020a34b83d8))
+* **env:** Fix an issue related to ngrok tunneling and the baseUrl of the app ([03160da](https://github.com/Maghwyn/meme-rn-api/commit/03160da65b56ce16abeb699299490c5421926007))
+* **meme-repo:** Rename the files from meme to memes ([8ede021](https://github.com/Maghwyn/meme-rn-api/commit/8ede0211735a7ad80b5b8a732cc3d2f43d4a5f97))
+* **uploads:** Fix some issues related to the upload rights to access the image ([22cf4d0](https://github.com/Maghwyn/meme-rn-api/commit/22cf4d0e35df7d4b7ada06226d38346a11b7c4d2))
+
+
+### Features
+
+* **meme-module:** Implement 4 routes, one to toggle the likes and the other 3 to retrieve the meme from comments, likes and created by userId context ([89de398](https://github.com/Maghwyn/meme-rn-api/commit/89de398702386ff0c89ee9d496cab9c90f629475))
+* **meme-mongodb:** Create some pipeline to retrieve the comments and the linkes where the userId is present ([cd95c67](https://github.com/Maghwyn/meme-rn-api/commit/cd95c678d2ceecdb41cf329c9e87ababaf0f26f7))
+* **memes:** Implement the likes ([4bfbb67](https://github.com/Maghwyn/meme-rn-api/commit/4bfbb67e91b68f45517ffead3b6965083ccdbfb2))
+* **users:** Add the pictureUrl, backgroundUrl and the bio for the user ([70ca09a](https://github.com/Maghwyn/meme-rn-api/commit/70ca09a905d4d6c21e545dec5a23f1b369500ce1))
+
 # [1.1.0-dev.6](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2024-03-07)
 
 
