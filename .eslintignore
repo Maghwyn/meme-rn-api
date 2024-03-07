@@ -1,1 +1,7 @@
-/dist
+dist/
+files/
+data/
+node_modules/
+.husky/
+.github/
+.eslintrc.js
