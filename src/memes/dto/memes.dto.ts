@@ -1,6 +1,7 @@
 import {
 	ArrayMaxSize,
 	IsArray,
+	IsBoolean,
 	IsIn,
 	IsNotEmpty,
 	IsNumber,

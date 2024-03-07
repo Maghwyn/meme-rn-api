@@ -8,6 +8,7 @@ export type Meme = {
 	category: string;
 	upload: MemeUpload;
 	comments: Array<Comment>;
+	likes: Array<ObjectId>;
 	updatedAt: Date;
 	createdAt: Date;
 };
@@ -19,6 +20,7 @@ export type MemeUpload = {
 };
 
 export type Comment = {
+	userId: ObjectId;
 	username: string;
 	content: string;
 	createdAt: Date;

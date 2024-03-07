@@ -1,5 +1,13 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Filter, Db, InsertOneOptions, FindOptions, UpdateFilter } from 'mongodb';
+import {
+	Filter,
+	Db,
+	InsertOneOptions,
+	FindOptions,
+	UpdateFilter,
+	AggregateOptions,
+	Document,
+} from 'mongodb';
 
 import { Meme } from '@/memes/types/memes.type';
 
@@ -25,6 +33,10 @@ export class MemesRepository {
 
 	findMany(filter: Filter<Meme>, options?: FindOptions<Meme>) {
 		return this.memes.find(filter, options).sort({ updatedAt: -1 }).toArray();
+	}
+
+	aggregate(pipeline: Array<Document>, options?: AggregateOptions) {
+		return this.memes.aggregate(pipeline, options).toArray();
 	}
 
 	async exists(query: Filter<Meme>) {
