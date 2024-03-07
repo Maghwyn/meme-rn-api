@@ -4,9 +4,10 @@ import { EnvConfiguration } from '@/config/interfaces/config.interface';
 export const config = {
 	app: {
 		env: process.env.NODE_ENV,
-		port: process.env.API_PORT,
-		domain: process.env.API_DOMAIN,
-		isHttps: JSON.parse(process.env.API_IS_HTTPS),
+		port: process.env.NEST_API_PORT,
+		domain: process.env.NEST_API_DOMAIN,
+		isHttps: JSON.parse(process.env.NEST_API_IS_HTTPS),
+		fileSizeLimit: parseInt(process.env.NEST_APP_FILE_SIZE_MB_LIMIT),
 	},
 	mongo: {
 		uri: process.env.MONGO_URI,
