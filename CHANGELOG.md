@@ -1,3 +1,10 @@
+# [1.1.0-dev.12](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.11...v1.1.0-dev.12) (2024-03-08)
+
+
+### Bug Fixes
+
+* **comment:** When commenting, add the pictureUrl inside ([0bd147a](https://github.com/Maghwyn/meme-rn-api/commit/0bd147aeddf3c1553663322bb0fa169758eb4861))
+
 # [1.1.0-dev.11](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.10...v1.1.0-dev.11) (2024-03-08)
 
 
