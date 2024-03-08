@@ -1,3 +1,10 @@
+# [1.1.0-dev.10](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.9...v1.1.0-dev.10) (2024-03-08)
+
+
+### Bug Fixes
+
+* **memes:** Fix the like button, missing operator ([783815c](https://github.com/Maghwyn/meme-rn-api/commit/783815c55011af638ce919048b3ca3e29b6a6223))
+
 # [1.1.0-dev.9](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.8...v1.1.0-dev.9) (2024-03-07)
 
 
