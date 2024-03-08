@@ -58,8 +58,8 @@ export class MemesController {
 		@Param('memeId') memeId: string,
 		@Res() res: Response,
 	) {
-		await this.memesService.toggleLike(userId, memeId);
-		return res.status(200).json();
+		const liked = await this.memesService.toggleLike(userId, memeId);
+		return res.status(200).json(liked);
 	}
 
 	@Get(':userId/comments')

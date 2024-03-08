@@ -122,17 +122,18 @@ export class MemesService {
 		const meme = await this.memesRepository.findOne({ _id: memeId });
 		if (!meme) throw new ServiceError('NOT_FOUND', 'The requests meme does not exist');
 
-		const isLiked = meme.likes.includes(userId);
+		const isLiked = meme.likes.some((uid) => uid.toString() === userId.toString());
 
 		if (!isLiked) {
 			await this.memesRepository.updateOne(
 				{ _id: memeId },
 				{
-					push: {
+					$push: {
 						likes: userId,
 					},
 				},
 			);
+			return true;
 		} else {
 			await this.memesRepository.updateOne(
 				{ _id: memeId },
@@ -142,6 +143,7 @@ export class MemesService {
 					},
 				},
 			);
+			return false;
 		}
 	}
 
