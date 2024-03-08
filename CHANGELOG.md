@@ -1,3 +1,10 @@
+# [1.1.0-dev.11](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.10...v1.1.0-dev.11) (2024-03-08)
+
+
+### Bug Fixes
+
+* **meme:** Meme projection for request get all memes created by user ([4ca699c](https://github.com/Maghwyn/meme-rn-api/commit/4ca699caea84d0cf5ed78f59d45ecb9988b83699))
+
 # [1.1.0-dev.10](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.9...v1.1.0-dev.10) (2024-03-08)
 
 
