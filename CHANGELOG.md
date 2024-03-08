@@ -1,3 +1,10 @@
+# [1.1.0-dev.13](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.12...v1.1.0-dev.13) (2024-03-08)
+
+
+### Features
+
+* **categories:** Type categories memes in global constant ([cb9f1c6](https://github.com/Maghwyn/meme-rn-api/commit/cb9f1c6d9f556f70be4e88b4238c770cb273500e))
+
 # [1.1.0-dev.12](https://github.com/Maghwyn/meme-rn-api/compare/v1.1.0-dev.11...v1.1.0-dev.12) (2024-03-08)
 
 
