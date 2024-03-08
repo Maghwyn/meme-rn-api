@@ -20,6 +20,7 @@ export type MemeUpload = {
 };
 
 export type Comment = {
+	pictureUrl: string;
 	userId: ObjectId;
 	username: string;
 	content: string;

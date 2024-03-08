@@ -45,12 +45,14 @@ export class MemesService {
 			category: query.c ? query.c : undefined,
 		});
 
-		return this.memesRepository.findMany(
+		const memes = await this.memesRepository.findMany(
 			{
 				...filter,
 			},
 			MEMES_PROJECTION,
 		);
+
+		return memes.sort(() => Math.random() - 0.5);
 	}
 
 	async createMeme(userId: ObjectId, meme: DTOCreateMeme) {
@@ -89,6 +91,7 @@ export class MemesService {
 		const now = new Date();
 		const comment = {
 			userId: userId,
+			pictureUrl: user.pictureUrl,
 			username: user.username,
 			content: content,
 			createdAt: now,
