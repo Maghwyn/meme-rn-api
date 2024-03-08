@@ -6,7 +6,7 @@ import { UsersService } from '@/users/users.service';
 import { ServiceError } from '@/common/error/catch.service';
 import { CATEGORIES, SEARCH_FORMAT } from '@/common/constants/global';
 import { clearUndefined } from '@/common/helpers/object.helper';
-import { MEMES_PROJECTION } from '@/memes/utils/memes.projection';
+import { MEMES_CREATED_PROJECTION, MEMES_PROJECTION } from '@/memes/utils/memes.projection';
 import { DTOCreateMeme } from '@/memes/dto/memes.dto';
 import { convertToObjectId } from '@/common/helpers/string.helper';
 import { getMemesCommentsPipeline, getMemesLikesPipeline } from '@/memes/utils/memes.pipeline';
@@ -161,6 +161,6 @@ export class MemesService {
 
 	async retrieveUserMemesCreated(userStrId: string) {
 		const userId = convertToObjectId(userStrId);
-		return this.memesRepository.findMany({ userId: userId }, MEMES_PROJECTION);
+		return this.memesRepository.findMany({ userId: userId }, MEMES_CREATED_PROJECTION);
 	}
 }
