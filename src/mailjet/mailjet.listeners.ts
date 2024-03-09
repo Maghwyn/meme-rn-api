@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 
-import { config } from '@/config/config';
 import { MailjetService } from '@/mailjet/mailjet.service';
 import { MailjetEmail, MailjetAskToken } from '@/mailjet/events/mj.events.req';
 import { Events, MailjetTemplate } from '@/mailjet/types/events.enum';
@@ -31,17 +30,6 @@ export class MailjetListeners {
 			templateId: MailjetTemplate.activationToken,
 			recipients: [{ Email: email }],
 			args: { code: token },
-		});
-	}
-
-	@OnEvent(Events.askResetPwdToken)
-	async handleAskResetToken(payload: MailjetAskToken) {
-		const { email, token } = payload;
-
-		this.mailjetService.sendUniversalEmail({
-			templateId: MailjetTemplate.resetPwdToken,
-			recipients: [{ Email: email }],
-			args: { token },
 		});
 	}
 }

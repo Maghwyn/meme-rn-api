@@ -5,14 +5,16 @@ dotenv.config();
 import { EOL } from 'os';
 
 const envsToCheck = [
-	'API_PORT',
-	'API_DOMAIN',
-	'API_IS_HTTPS',
+	'NEST_API_PORT',
+	'NEST_API_URL',
+	'NEST_APP_FILE_SIZE_MB_LIMIT',
 	'MONGO_URI',
 	'MONGO_DBNAME',
 	'JWT_SECRET',
 	'MAILJET_USER',
 	'MAILJET_PASS',
+	'MAILJET_TEMPLATE_ACCOUNT_VALIDATED',
+	'MAILJET_TEMPLATE_ACTIVATION_TOKEN',
 ];
 
 const missing = [];

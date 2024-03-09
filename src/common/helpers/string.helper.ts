@@ -64,11 +64,10 @@ export const convertToObjectId = (id: string) => {
 };
 
 export const getDomainUrl = () => {
-	const protocol = config.app.isHttps ? 'https' : 'http';
-	const domain = config.app.domain;
-	const port = config.app.domain !== "localhost" ? '' : `:${config.app.port}`;
+	const appUrl = config.app.url;
+	const port = config.app.url.includes('localhost') ? `:${config.app.port}` : '';
 
-	return `${protocol}://${domain}${port}`;
+	return `${appUrl}${port}`;
 };
 
 export const truncate = (str: string, maxLen: number) => {

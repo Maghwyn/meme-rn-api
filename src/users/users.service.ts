@@ -2,7 +2,7 @@ import { AggregateOptions, Filter, FindOneAndUpdateOptions, ObjectId, Document }
 import { Inject, Injectable, forwardRef } from '@nestjs/common';
 
 import { UsersRepository } from '@/users/users.repository';
-import { User } from '@/users/interfaces/users.interface';
+import { User } from '@/users/types/users.type';
 import { KeysRequired } from '@/common/interfaces/advanced.interface';
 
 @Injectable()
@@ -38,12 +38,8 @@ export class UsersService {
 		return this.usersRepository.exists({ _id: userId, activated: true });
 	}
 
-	updateUserPassword(userId: ObjectId, password: string) {
-		return this.usersRepository.updateOne({ _id: userId }, { $set: { password } });
-	}
-
 	setUserName(customerId: string, firstname: string, lastname: string) {
-		return this.usersRepository.updateOne({ customerId }, { $set: { firstname, lastname }});
+		return this.usersRepository.updateOne({ customerId }, { $set: { firstname, lastname } });
 	}
 
 	aggregateUser(pipeline: Array<Document>, options?: AggregateOptions) {

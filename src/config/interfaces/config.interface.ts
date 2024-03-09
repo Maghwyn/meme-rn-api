@@ -10,8 +10,8 @@ export namespace Configuration {
 	export interface Application {
 		env: string;
 		port: string;
-		domain: string;
-		isHttps: boolean;
+		url: string;
+		fileSizeLimit: number;
 	}
 
 	export interface MongoDB {
@@ -26,5 +26,11 @@ export namespace Configuration {
 	export interface Mailjet {
 		user: string;
 		pass: string;
+		templates: MailjetTemplate;
+	}
+
+	export interface MailjetTemplate {
+		account_validated: number;
+		activation_token: number;
 	}
 }
